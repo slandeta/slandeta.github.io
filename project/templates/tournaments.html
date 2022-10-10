@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tournaments
+{% endblock %}
+
+{% block main %}
+    <form action="/tournaments" method="post">
+
+        <div class="row">
+            <div class="row1">
+                <a href="/fake_io">
+                    <img src="/static/DLR_AGF.jpg">
+                    <div class="tournament_name_fio"><b>Fake International Open</b></div>
+                </a>
+            </div>
+            <div class="row1">
+                <p class="fantasy">The Fake International Open will take place in a magical land that will only be revealed once you have registered. The top jiu jitsu athletes from all over the world will descend upon the undisclosed location to compete for ultimate glory.</p>
+                <br>
+                <p class="fantasy">Click picture for more resgistration information.</p>
+            </div>
+        </div>
+        <br>
+        <div>
+            <p class="fantasy">More tournaments to come!</p>
+        </div>
+        <!--This used to be on this page and I'm not sure if I'll need it again
+            <div id="tournament">
+            <h2>Fake International Open</h2>
+            <button>
+                <a href="/fake_io" style="border-style: none;">Register</a>
+            </button>
+            <br>
+            <button>
+                <a href="/fakeio_bracket" style="border-style: none;">View Brackets</a>
+            </button>
+        </div>-->
+{% endblock %}

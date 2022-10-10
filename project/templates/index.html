@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="get">
+        <h2>Brazilian Jiu Jitsu Tournaments</h2>
+        <div class="homepage_pics1">
+            <div class="column1">
+                <!--Just to make space-->
+            </div>
+            <div class="column1">
+                <p style="font-size: 22px;">Welcome to the premiere brand for fake Brazilian Jiu Jitsu tournaments.
+                    The best of the best from all over the globe clash in epic battle to determine which athletes
+                    stand above the rest. These tournaments are not for the feight of heart. All submissions are
+                    legal and there are only two weight classes  (+ / - 175).
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="homepage_pics2"></div>
+            <div class="column2">
+                <img src="/static/pic2.jpg">
+            </div>
+            <div class="column2">
+                <img src="/static/pic3.jpg">
+            </div>
+        </div>
+{% endblock %}

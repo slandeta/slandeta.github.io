@@ -1,0 +1,461 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Brackets
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelector('#search').addEventListener('click', function () {
+                let input = document.querySelector('input')
+                let adult = document.getElementById('adult')
+                let master = document.getElementById('master')
+                let grandmaster = document.getElementById('grandmaster')
+                let graveyard = document.getElementById('graveyard')
+
+                if (input.value == 'adult' || input.value == 'Adult') {
+                    input.style.backgroundColor = 'white';
+                    document.querySelector('#wrong').innerHTML = '';
+                    adult.scrollIntoView({behavior : 'smooth'});
+                } else if (input.value == 'master' || input.value == 'Master') {
+                    input.style.backgroundColor = 'white';
+                    document.querySelector('#wrong').innerHTML = '';
+                    master.scrollIntoView({behavior: 'smooth'});
+                } else if (input.value == 'grandmaster' || input.value == 'Grandmaster') {
+                    input.style.backgroundColor = 'white';
+                    document.querySelector('#wrong').innerHTML = '';
+                    grandmaster.scrollIntoView({behavior: 'smooth'});
+                } else if (input.value == 'graveyard' || input.value == 'graveyard') {
+                    input.style.backgroundColor = 'white';
+                    document.querySelector('#wrong').innerHTML = '';
+                    graveyard.scrollIntoView({behavoir: 'smooth'});
+                } else {
+                    document.querySelector('#wrong').innerHTML = 'Enter a valid age division';
+                    input.style.backgroundColor = 'red';
+                }
+            })
+        })
+
+    </script>
+{% endblock %}
+
+{% block main %}
+    <form action="/fakeio_bracket" method="get">
+        <h2>Fake International Open Competitor List By Division</h2>
+        <br>
+
+        <div class="search">
+            <input type="text" placeholder="Age Division">
+            <button type="button" id="search" style="background-color: white;">Search</button>
+        </div>
+
+        <p id="wrong"></p>
+
+        <div class="big_bracket" id="adult">
+            <h3>Adult</h3>
+            <div class="bracket" id="adult" style="border-color: white;">
+                <h3>White Belt 175 and Under</h3>
+                <ul>
+                    {% for name in ad_wb_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+            <div class="bracket" style="border-color: white;">
+                <h3>White Belt Over 175</h3>
+                    <ul>
+                        {% for name in ad_wb_heavy %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Blue;">
+                <h3>Blue Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ad_blub_light %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Blue;">
+                <h3>Blue Belt Over 175</h3>
+                    <ul>
+                        {% for name in ad_blub_heavy %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Purple;">
+                <h3>Purple Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ad_pb_light %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Purple;">
+                <h3>Purple Belt Over 175</h3>
+                    <ul>
+                        {% for name in ad_pb_heavy %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: #804337;">
+                <h3>Brown Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ad_brb_light %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: #804337;">
+                <h3>Brown Belt Over 175</h3>
+                    <ul>
+                        {% for name in ad_brb_heavy %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Black;">
+                <h3>Black Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ad_blab_light %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Black;">
+                <h3>Black Belt Over 175</h3>
+                    <ul>
+                        {% for name in ad_blab_heavy %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+        <br>
+
+        <div class="big_bracket" id="master">
+            <h3>Master</h3>
+            <div class="bracket" style="border-color: White;">
+                <h3>White Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ms_wb_light %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+            <div class="bracket" style="border-color: White;">
+                <h3>White Belt Over 175</h3>
+                    <ul>
+                        {% for name in ms_wb_heavy %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Blue;">
+                <h3>Blue Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ms_blub_light %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: Blue;">
+                <h3>Blue Belt Over 175</h3>
+                    <ul>
+                        {% for name in ms_blub_heavy %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: Purple;">
+                <h3>Purple Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ms_pb_light %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: Purple;">
+                <h3>Purple Belt Over 175</h3>
+                    <ul>
+                        {% for name in ms_pb_heavy %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: #804337;">
+                <h3>Brown Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ms_brb_light %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: #804337;">
+                <h3>Brown Belt Over 175</h3>
+                    <ul>
+                        {% for name in ms_brb_heavy %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: Black;">
+                <h3>Black Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in ms_blab_light %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="border-color: Black;">
+                <h3>Black Belt Over 175</h3>
+                    <ul>
+                        {% for name in ms_blab_heavy %}
+                            <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+            <br>
+        <div class="big_bracket" id="grandmaster">
+            <h3>Grandmaster</h3>
+            <div class="bracket" style="color: White;">
+                <h3>White Belt 175 and Under</h3>
+                    <ul>
+                        {% for name in gm_wb_light %}
+                        <li>{{ name.name }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+                <br>
+            <div class="bracket" style="color: White;">
+                <h3>White Belt Over 175</h3>
+                <ul>
+                    {% for name in gm_wb_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: Blue;">
+                <h3>Blue Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gm_blub_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: Blue;">
+                <h3>Blue Belt Over 175</h3>
+                <ul>
+                    {% for name in gm_blub_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: Purple;">
+                <h3>Purple Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gm_pb_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: Purple;">
+                <h3>Purple Belt Over 175</h3>
+                <ul>
+                    {% for name in gm_pb_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: #804337;">
+                <h3>Brown Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gm_brb_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: #804337;">
+                <h3>Brown Belt Over 175</h3>
+                <ul>
+                    {% for name in gm_brb_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: Black;">
+                <h3>Black Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gm_blab_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+
+            <div class="bracket" style="color: Black;">
+                <h3>Black Belt Over 175</h3>
+                <ul>
+                    {% for name in gm_blab_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+        </div>
+
+        <div class="big_bracket" id="graveyard">
+            <h3>Graveyard</h3>
+            <div class="bracket" style="border-color: White;">
+                <h3>White Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gv_wb_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+                <br>
+            <div class="bracket" style="border-color: White;">
+                <h3>White Belt Over 175</h3>
+                <ul>
+                    {% for name in gv_wb_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Blue;">
+                <h3>Blue Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gv_blub_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Blue;">
+                <h3>Blue Belt Over 175</h3>
+                <ul>
+                    {% for name in gv_blub_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Purple;">
+                <h3>Purple Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gv_pb_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Purple;">
+                <h3>Purple Belt Over 175</h3>
+                <ul>
+                    {% for name in gv_pb_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: #804337;">
+                <h3>Brown Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gv_brb_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: #804337;">
+                <h3>Brown Belt Over 175</h3>
+                <ul>
+                    {% for name in gv_brb_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Black;">
+                <h3>Black Belt 175 and Under</h3>
+                <ul>
+                    {% for name in gv_blab_light %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+
+            <div class="bracket" style="border-color: Black;">
+                <h3>Black Belt Over 175</h3>
+                <ul>
+                    {% for name in gv_blab_heavy %}
+                    <li>{{ name.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <br>
+        </div>
+{% endblock %}

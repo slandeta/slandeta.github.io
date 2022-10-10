@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Athlete Info
+{% endblock %}
+
+{% block main %}
+    <main>
+        <form action="/athlete_info" method="post">
+            <div id="form">
+                <input name="first_name" placeholder="First Name" type="text"><br>
+                <input name="last_name" placeholder="Last Name" type="text"><br>
+                <input name="age" placeholder="Age" type="number"><br>
+
+                <label for="rank">Rank</label>
+                <select name="rank" id="rank">
+                    <option value="White Belt">White Belt</option>
+                    <option value="Blue Belt">Blue Belt</option>
+                    <option value="Purple Belt">Purple Belt</option>
+                    <option value="Brown Belt">Brown Belt</option>
+                    <option value="Black Belt">Black Belt</option>
+                </select><br>
+                <input name="weight" placeholder="Weight (whole number)" type="number"><br>
+                <button name="submit" type="submit">Submit</button>
+            </div>
+    </main>
+{% endblock %}

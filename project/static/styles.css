@@ -1,0 +1,167 @@
+p {
+    color: black;
+}
+
+#div_navbar {
+    /* background-color: #575050; */
+    background-color: #2E2B2A;
+    height: 50px;
+}
+
+#navbar_lo {
+    text-align: center;
+    padding: 5px;
+}
+
+#navbar_li {
+    text-align: center;
+    padding: 5px;
+
+}
+
+.nav_button {
+    position: relative;
+    display: inline;
+    padding: 10px;
+    top: 8px;
+}
+
+#profile_info {
+    text-align: center;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #E7E6E6;
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px; */
+}
+
+a:hover {
+    background-color: black;
+}
+
+#form {
+    text-align: center;
+}
+
+body {
+    /* background-color: #242625; */
+    background-color: Grey;
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: yellow;
+}
+
+h3 {
+    color: #242625;
+}
+
+li {
+    color: black;
+}
+button {
+    background-color: red;
+    margin-top: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+table {
+    color: red;
+}
+
+.bracket {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #696969;
+}
+
+.big_bracket {
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.homepage_pics1 {
+    display: grid;
+    place-items: center;
+}
+
+.homepage_pics2 {
+    display: grid;
+}
+
+.column1 {
+    border-style: solid;
+    height: auto;
+    width: 50%;
+    margin: auto;
+
+}
+
+.column2 {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+.tournament_name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 30px;
+}
+
+.row1 {
+    height: auto;
+    width: 50%;
+    padding: 5px;
+    border-style: solid;
+}
+
+.tournament_name_fio {
+    position: relative;
+    bottom: 86%;
+    left: 5%;
+    font-size: 35px;
+    color: Black;
+}
+
+.fantasy {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.table {
+    border-style: solid;
+    border-color: black;
+    margin: auto;
+    width: 50%;
+    height: auto;
+    left: 25%;
+}
