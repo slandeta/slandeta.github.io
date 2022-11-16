@@ -31,6 +31,7 @@ body {
 .item-img {
     width: 90%;
     height: 75%;
+    padding: 5px;
 }
 
 a:link {
