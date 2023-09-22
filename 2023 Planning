@@ -1,0 +1,16 @@
+This is the planning and design document for the 2023 Christmas website
+
+Concept will be the same as last year, but the design will be completely overhauled
+
+Deign Brainstorming:
+  - Multiple diplay options
+      - Slideshow view
+      - Grid view
+      - List view
+      - Downloadable PDF
+      - Sort options
+  - Groupings by price
+  - Ability to set a budget and have the site spit out itmes that fit it
+      - Ability to set how many low, medium, and high priced items you'd like to buy
+  - Descriptions of why I want the item and how I will use it
+  - Multiple purchase options per item
